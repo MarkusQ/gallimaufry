@@ -100,6 +100,24 @@ h3={margin:15%}. <i>...so let's warm up a bit first</i>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
 
+<table><tr><td>
+!Archie.png!
+</td><td>
+!{width:400px}gopher.jpg!
+</td><td>
+!{width:400px}wais.png!
+</td></tr><tr><td>
+<small>http://en.wikipedia.org/wiki/<br>File:Archieandrwcmc.png</small>
+</td><td>
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Cszmurlo</small>
+</td><td>
+!pd.png!
+<small>Produced by NSF</small>
+</td></tr></table>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
 h2. Is everyone confused?
 
 h2. Then let's dive in.
@@ -360,13 +378,6 @@ http://commons.wikimedia.org/wiki/User:Kallerna
 %end
 
 %end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-!SLIDE!
-!Salmon_sashimi.jpg!
-
-!cc-by.png!
-<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. The language "Brainfuck"
@@ -660,6 +671,13 @@ h2=. Act III
 
 Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!Salmon_sashimi.jpg!
+
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. The ornithopter objection
 
 bq. Asking if computers can think is like asking if submarines can swim.
@@ -806,6 +824,13 @@ PD http://www.rookiemoms.com/author/whitney/
 !={width:80%}spy041.jpg!
 
 http://www.theotherpages.org/spy/spy041.jpg
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!Salmon_sashimi.jpg!
+
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
