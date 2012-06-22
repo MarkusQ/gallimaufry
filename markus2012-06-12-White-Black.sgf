@@ -1,0 +1,16 @@
+(;GM[1]FF[4]AP[qGo:1.5.4]ST[1]
+SZ[19]HA[0]KM[5.5]PW[White]PB[Black]
+
+;B[cc];W[fd];B[fc];W[gc];B[ia];W[tt];B[sa];W[tt];B[lc];W[tt]
+;B[mc];W[tt];B[pc];W[tt];B[qc];W[tt];B[qd];W[tt];B[dg];W[cg]
+;B[tt];W[dh];B[tt];W[df];B[gg];W[kg];B[hf];W[lf];B[ig];W[lh]
+;B[hh];W[tt];B[mg];W[kk];B[nh];W[lj];B[mh];W[ll];B[mj];W[mk]
+;B[ml];W[tt];B[nk];AE[mg][mh][nh]
+;W[tt];B[lg];W[tt];B[mf];W[tt];B[mh];W[tt];B[ng];W[cl];B[tt]
+;W[dm];B[ck];W[dk];B[bl];W[el];B[cm];W[ej];B[dn];W[fk];B[em]
+;AE[ck][em]
+;W[em];B[en];W[ck];B[bk];W[dj];B[cj];W[fl];B[fm];W[fj];B[gl]
+;W[tt];B[gk];AE[dj]
+;W[tt];B[gj];W[tt];B[fi];W[tt];B[ei];W[tt];B[dj];AB[ck]AE[cj][cm]
+;W[cm];B[bm];AB[cn]AE[bk]
+)
