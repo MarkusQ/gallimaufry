@@ -1,0 +1,1307 @@
+%css
+.code { 
+  background-color: black;
+  color: #80FF80;
+  font-style: bold;
+  padding: 5px;
+  }
+
+body {
+  background-color: #FFE080;
+  padding: 5%;
+  }
+
+.step { visibility: hidden; }
+
+body { font-family: "Century Schoolbook", Times, serif; }
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Go go gallimaufry
+
+{{{
+(markus) ~/projects/osbridge/gallimaufry > dict gallimaufry | grep -vE '1913|[ ]{13}'
+2 definitions found
+
+From The Collaborative International Dictionary of English v.0.48 [gcide]:
+
+  Gallimaufry \Gal`li*mau"fry\, n.; pl. {Gallimaufries}. [F.
+     galimafr['e]e a sort of ragout or mixed hash of different
+     meats.]
+
+     1. A hash of various kinds of meats, a ragout.
+     2. Any absurd medley; a hotchpotch.
+
+From WordNet (r) 3.0 (2006) [wn]:
+
+  gallimaufry
+      n 1: a motley assortment of things [syn: {odds and ends},
+           {oddments}, {melange}, {farrago}, {ragbag}, {mishmash},
+           {mingle-mangle}, {hodgepodge}, {hotchpotch}, {gallimaufry},
+           {omnium-gatherum}]
+}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 0. This is going to get a little confusing
+
+%left
+!={height:600px}cheer.jpg!
+!cc-by-nc.png!
+%end
+
+%right
+h3={margin:15%}. <i>...so let's warm up a bit first</i>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+<table>
+<tr>
+<td>
+!={height:400px}tnt.png!
+</td>
+<td>
+!={height:400px}cis-boom-bah.png!
+</td>
+<td>
+!={height:400px}trans-boom-bah.png!
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td span=2>
+!cc-by.png!
+(c) 2012 Markus J. Q. Roberts; produced with ChemTool
+</tr>
+</table>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+%begin
+    (for next year) write the name of a scripting language, a zoo
+    animal, and a colour.  (BTW, this talk is loaded with teasers for
+    next year's talk; if you think you've caught the pattern come up
+    afterwards)
+    Now write PIN/password
+%end
+
+!crayons.jpeg!
+
+!<cc-by.png! © 2012 Pratibha Varshney http://qlikd.com/
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!orange_green.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+h2. Is everyone confused?
+
+h2. Then let's dive in.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+
+p{height:190px;}. 
+
+
+h2=. Act I
+
+</div>
+
+Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 1. Peace on Earth, doing it wrong
+
+!800px-Peter_Paul_Ruben's_copy_of_the_lost_Battle_of_Anghiari.jpg!
+
+%begin
+
+    * Shel Silverstien story
+    * song (One Tin Solider)
+    * HPMOR, vold. in monistary
+    * John Henry
+    * Happens in real life: Max's soccer game (rec league
+      vs. competitive, dads, most kids & parents happier
+      to lose & have fun than win miserably).
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+%left
+!={height:600px}funny-jam.jpg!
+%end
+
+%right
+%step_list
+~* People set out to do something
+~* They see a way to accomplish it
+~* They face obsticles and work to overcome them
+~* All their focus gets tied up in the means  
+~* Along the way, they forget to ask themselves "why?"
+
+~h3. <i>Is it that the task is worth doing, or that the secret is worth knowing, that the game is worth playing or the preserves worth preserving, or...what, exactly?</i>
+
+~* So instead of "Profit!", "Fail!"
+%end
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 2. Of course, we would never be that stupid
+
+!wrong-boat.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+
+p{height:190px;}. 
+
+
+h2=. Act II
+
+</div>
+
+Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Project Euler problem #1
+
+h3(center). <i>An Allegory in n Algorithms</i>
+
+%left
+h2. The problem description
+
+bq. If we list all the natural numbers below 10 that are multiples of
+    3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+bq. Find the sum of all the multiples of 3 or 5 below 1000.
+
+!cc-by-nc.png!
+
+http://projecteuler.net/problem=1
+%end
+
+%right
+!(right)euler_portrait.png!
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Algorithm 1
+
+{{{
+for ((t=23,t<1000000,t++)); do
+    curl --data="guess=$t" \
+        http://projecteuler.net/problem=1
+    done
+}}}
+
+%step
+!pe-form.png!
+%end
+
+h1. Algorithm 1b
+
+{{{
+for ((t=23,t<1000000,t++)); do
+    for ((c=10000,t<=99999,c++)); do
+        curl --data="guess=$t&confirm=$c" \
+            http://projecteuler.net/problem=1
+        end
+    done
+}}}
+
+%step
+<i>But they also do rate limiting...</i>
+%end
+h1. Algorithm 1c
+
+{{{
+for ((t=23,t<1000000,t++)); do
+    for ((c=10000,t<=99999,c++)); do
+        curl --data="guess=$t&confirm=$c" \
+            http://projecteuler.net/problem=1
+        sleep 5
+        end
+    done
+}}}
+
+h1. Algorithm 2
+
+{{{
+1 to 999 filter { x => x % 3 == 0 || x % 5 == 0 } sum
+}}}
+
+h1. Algorithm 3
+
+{{{
+a = 3
+b = 5
+t = 0
+while a < 1000 or b < 1000:
+    if a < b:
+        t = t+a
+        a = a + 3
+    elif b < a:
+        t = t+b
+        b = b + 5
+    else:
+        t = t+a
+        a = a + 3
+        b = b + 5
+print t
+}}}
+
+h1. Algorithm 4
+
+You meet a person who can do it in their head...
+
+%step_list
+given 1 to n sum = n(n+1)/2
+
+the answer is 3*(1 to 333 sum) + 5*(1 to 199 sum) - 15*(1 to 66 sum)
+~      or 3*333*334/2 + 5*199*200/2 - 15*66*67/2
+~      or (999*334 + 199000 - 66*1005)/2
+~      or (333666 + 199000 - 66330) /2
+~      or 466336/2 = 233168
+%end
+
+h1. Algorithm 5
+
+* We know that the sum < 10 is 23, so to 15 it's 23+10+12+15
+%step_list
+** = 23+12+10+15
+~** = 25+10+10+15 = 60
+~* We also know that there are 4 in the first list & 7 in the second
+~* 1000 = 15 * 66 + 10
+~* so breaking it in to repetitions of the 15-pattern plus to 10 at the end we have:
+
+{{{
+66*60 + 15*7*65*66/2 + 4*990 + 23
+}}}
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%begin
+h1. Bonus algorithms
+
+* three triangles
+* asymptotic approx.
+%end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. So where does that leave us?
+
+!=(center)cat-melon.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. The rules of Go
+
+h3(center). <i>(with possible minor errors or oversimplifications)</i>
+
+!=(center)go-rules.png!
+
+%begin
+<table>
+<tr>
+<td>
+!go-rules.png!
+</td>
+<td>
+%step_list
+~* Players take turns placing stones on the intersections of a 19x19 grid
+~* The intersections are connected by lines
+~* A "group" is a maximal connected set of same-coloured stones 
+~* A "liberty" is an open space connected to a group
+~* A group with no liberties is captured and removed from the board
+~* You can't play a suicidal move that would result in the capture of a stone
+~* Capturing favours the attacker
+~* You can't return the board to a previous state
+~* Eyes are holes in a group
+~* Two eyes live (groups of genus >= 2 can not be captured)
+~* Scoring initially appears to have an element of fungshui to it
+%end
+</td>
+</tr>
+</table>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+%left
+
+!Golf_balls_kallerna.JPG!
+
+http://commons.wikimedia.org/wiki/User:Kallerna
+!cc-by-sa.png!
+
+%end
+
+%right
+
+%step_list
+* Golf balls have a radius of about 2.5cm,
+~* or 10/4cm,
+~* so a volume of 4/3 &pi; (10/4)^3 cm^3
+~* or &pi;/3 1000/16 cm^3
+~* At a packing density of 3/4 that's &pi;/9 1000/4 cm^3,
+~* or 36/&pi; (about 12) golf balls per liter.
+~* Thus a cubic meter holds about 12,000 golf balls 
+%end
+
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!Salmon_sashimi.jpg!
+
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. The language "Brainfuck"
+
+h3(center). <i>(with possible minor errors or oversimplifications)</i>
+
+* A is an array of 30,000 bytes.
+* I is an integer.
+* <code>></code> means <code>I += 1</code>
+* <code><</code> means <code>I -= 1</code>
+* <code>+</code> means <code>A[I] += 1</code>
+* <code>-</code> means <code>A[I] -= 1</code>
+* <code>.</code> means <code>write_byte A[I]</code>
+* <code>,</code> means <code>A[I] = read_byte</code>
+* <code>[</code> means jump ahead past the matching <code>]</code> if <code>A[I] == 0</code>
+* <code>]</code> means jump back to the matching <code>[</code>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+{{{
+++++++++++[>+++++++>++++++++++>+++>+<<<<-]
+>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.
+}}}
+
+%step
+{{{
+ 
++++++ +++++             initialize counter (cell #0) to 10
+[                       use loop to set the next four cells to 70/100/30/10
+    > +++++ ++              add  7 to cell #1
+    > +++++ +++++           add 10 to cell #2 
+    > +++                   add  3 to cell #3
+    > +                     add  1 to cell #4
+    <<<< -                  decrement counter (cell #0)
+]                   
+> ++ .                  print 'H'
+> + .                   print 'e'
++++++ ++ .              print 'l'
+.                       print 'l'
++++ .                   print 'o'
+> ++ .                  print ' '
+<< +++++ +++++ +++++ .  print 'W'
+> .                     print 'o'
++++ .                   print 'r'
+----- - .               print 'l'
+----- --- .             print 'd'
+> + .                   print '!'
+> .                     print '\n'
+}}}
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+
+!xkcd-365-slides.png!
+
+(Source: http://xkcd.com/365 )
+!cc-by-nc.png!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+!grand_challenge.png!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<table><tr><td>
+!{height:300px}TurbinadoSugar.jpg!
+</td><td>
+!{height:300px}TNT_flakes.jpg!
+</td><td>
+!{height:300px}gopher.jpg!
+</td></tr><tr><td>
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Leena</small>
+</td><td>
+!pd.png!
+<small>http://ar.wikipedia.org/wiki/User:Mohammeddragon</small>
+</td><td>
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Cszmurlo</small>
+</td></tr></table>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Digression Concerning the Two Brief Formal Systems
+
+%step_list
+<center><table>
+<tr><td width=250em><h2>Go</h2></td><td width=250em><h2>Brainfuck</h2></td></tr>
+<tr class='step'><td>Hard for computers   </td><td>Hard for humans     </td></tr>
+<tr class='step'><td>Easier for humans    </td><td>Easier for computers </td></tr>
+<tr class='step'><td colspan=2> - - - roughly equal complexity - - - </td></tr>
+<tr class='step'><td>2d                    </td><td>1d                  </td></tr>
+<tr class='step'><td>Adversarial           </td><td>Impersonal          </td></tr>
+<tr class='step'><td>Requires foresight    </td><td>Timeless            </td></tr>
+<tr class='step'><td>Lots of choices       </td><td>Few/no choices      </td></tr>
+<tr class='step'><td>Partial information   </td><td>Full information    </td></tr>
+<tr class='step'><td>...?                  </td><td>...?                </td></tr>
+</table></center>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<table><tr><td>
+!=(left){height:650px}golf-course.jpg!
+</td><td>
+%step
+!=(right){height:650px}robot.jpg!
+%end
+</td></tr></table>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+!golf-ball-cube-1.jpg!
+
+Prepared with Structure Synth
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+!=(left)golf-ball-cube-2.jpg!
+
+* A 2m x 2m x 2m cube holds ~100,000 golf balls.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+!golf-ball-cube-3.png!
+
+* A 20m x 20m x 20m cube holds ~100,000,000 golf balls.
+%step
+* With room left for a respectable amount of TNT
+%end
+
+%begin
+
+      To meet this challenge you build a "machine" that consisted of a
+      20-meter cube of golf balls (thus (20 x 10)^3 = 8 million
+      liters, for ~100 million balls, corresponding to the number of
+      playouts considered by a typical Monte Carlo tree search) with
+      an appropriately sized explosive charge buried near the middle.
+
+%end
+
+!SLIDE!
+
+<table><tr><td>
+!=(left)420px-Golf_field.png!
+</td><td>
+%step_list
+So you put your cube o' balls at the tee, and set the charge off.
+~
+Assuming the charge is symmetrical and calibrated for a par-5 hole,
+the 100 million balls will be scattered over a 500m radius circle,
+with an area of &pi; r^2 = about one million square meters, so there
+will be about 100 per square meter.
+%end
+</td><td>
+%step
+!=(right)420px-Golf_field-balls.png!
+%end
+</td></tr></table>
+
+!SLIDE!
+
+<table><tr><td>
+!=(left)Golf_field-green.png!
+</td><td>
+%step_list
+* Since the cup has a diameter of about 10cm, there's about a 75%
+chance that at least one of the balls will land in the cup --
+more, if you take into account that they'll bounce around a bit
+on arrival.
+
+~* Even none land in the hole, many will land much closer to the
+cup than the tee, and you can of course iterate -- after all, that's
+what golfers do.
+%end
+</td><td>
+%step
+!=(right)Golf_field-green_balls.png!
+%end
+</td></tr></table>
+
+!SLIDE
+
+%left
+!golf-robot.jpg!
+%end
+
+%right
+%step_list
+Suppose you were silly enough to actually do this.
+~
+Would any reasonable person contend that in doing so you had built a
+machine that played golf?
+~
+h3. ...but it gets worse.
+%end
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+<div style="background: url(Hubble_ultra_deep_field.jpg); color: white;">
+
+h2. The golf analogy is way too flattering.
+
+%step_list
+* Suppose there are 150 moves left.
+~* Ignoring captures, there are 150! playouts, or roughly 6e+262.
+~* Clearly, we aren't going to find the perfect game playout.
+~* So what are the odds that the playouts are going to hit upon
+anything close to what will happen if both players make one of
+their 10 best moves at each turn?
+~* That will reduce the number of possibilities by about 1e140, to 1e122, which looks much
+better.
+~* How much better?  Well, for comparison, there are on the order of 1e80 atoms in the observable universe.
+~* So suppose you look out in the night sky on a random direction (not
+      necessarily towards a star)
+~* and think of an integer number of nanoseconds between 0 and 13 billion years.
+~* Go out that far as the photon flies in that direction, and write your initials on
+the closest atom to that spot.
+~* Meanwhile, I'll pick an arbitrary atom by some other method, and look to see if it has your
+   initials on it.
+~* Assuming atomic graffiti isn't a widespread but heretofore unrecognized (by humans) blight, my odds of
+finding your atom on the first shot are roughly 1e42 better than the Monte Carlo playout's odds of hitting a decent game.
+
+~
+h3(right). ...but it gets still worse.
+~
+%end
+</div>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. We're that stupid
+
+%left
+!wrong-boat.jpg!
+%end
+
+%right
+%step_list
+* What was the point again?
+** Will there be peace in the middle east once computers can beat humans at go?
+** Is there a plausible business plan that hinges on having computers beat humans at go?
+** Are there people who are being forced by circumstance to play go against their will, who's missery could be releaved by automating the task?
+~* Or is it just an exercise in "Artificial Intelegence" in which case the question just moves down the road a bit.
+%end
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. The real goal of AI
+
+bq=. <i>"AI is what computers can't do yet"</i>
+
+
+!<daugherty_john_henry_and_the_double_jointed_steam-drill.jpg!
+
+<div style='margin-left:600px'>
+%step_list
+* That's because "AI is the study of things we know are possible
+(because people can do them) but we don't know how to write code
+for yet."
+~* It's important because the skills are useful and we don't
+have good algorithms/hardware solutions for them.
+~h3. AI is about reverse enginering the human mind to learn its secrets
+
+<i>It's not about beating humans at stuff</i>
+~
+!authors-message.gif!
+%end
+</div>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+
+p{height:190px;}. 
+
+
+h2=. Act III
+
+</div>
+
+Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. The ornithopter objection
+
+bq. Asking if computers can think is like asking if submarines can swim.
+
+bq. <i>AKA the ornithopter objection</i>
+
+!={height:50%}(left)Design_for_a_Flying_Machine.jpg!
+!={height:50%}(right)Otto_is_going_to_fly.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!hand-tools.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+<table>
+<tr>
+<td>
+!={height:500px}Feather.png!
+</td>
+<td>
+%step
+!={height:400px}fletching.jpg!
+
+© Earthen Exposure 2011
+
+earthenexposure.com
+%end
+</td>
+<td>
+%step
+!={height:500px}(right)Fluffy-Chick.jpg!
+%end
+</td>
+</tr>
+</table>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Are we likely to fall into the same trap?
+
+%step
+
+bq.  Computers will never be able to think.  Everything we know that is capable of thought is mostly water, and water destroys computers.
+
+p(right). <i>-- A tenured professor of philosophy dives into the feather trap</i>
+
+%end
+
+<table><tr><td>
+%step
+!=(left)liquid-cooled-pc.jpg!
+%end
+</td><td>
+%step
+!=(right)brainradiator.jpg!
+%end
+</td></tr></table>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. More than birds & feathers
+
+* Birds have lots of features
+%step_list
+* Other things can fly
+~* Ornothopters are just one attempt in a long, long history
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+!={height:650px}graph-goes-here.png!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. More a trove of hints than an objection
+
+bq. "Bumble bees can't fly" -- Scientists, according to legend
+
+%step_list
+bq. "A fixed wing aircraft with the parameters (surface area, mass, etc.) of a bumble bee could not fly" --  Ludwig Prandtl, paraphrased, circa 1930
+~
+bq. The wings [...] are moved almost horizontally during hovering [...] and there are three unusual phases in the wing stroke: the clap, the fling and the flip. In the clap the wings are brought together at the top of the morphological upstroke. In the fling [...] the opposed wings are flung open like a book, hinging about their posterior margins. In the flip [...] the wings are rapidly twisted through about 180°. -- Torkel Weis-Fogh
+
+http://jeb.biologists.org/content/59/1/169.short
+~
+bq. Resolved computation of two dimensional insect hovering shows for the first time that a two dimensional hovering motion can generate enough lift to support a typical insect weight. The computation reveals a two dimensional mechanism of creating a downward dipole jet of counterrotating vortices, which are formed from leading and trailing edge vortices. -- Z. Jane Wang
+
+http://prl.aps.org/abstract/PRL/v85/i10/p2216_1
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. So are we committing "the ornithopter error"?
+
+!={height:550px}Chambers-Gorge-3.jpg!
+!cc-by-nc-nd.png!
+(c) Susan Borgas
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. So are we committing "the ornithopter error"?
+
+!<{height:500px}Iguazu_falls.jpg!
+!<{height:40px}gfdl.png!
+(c) http://en.wikipedia.org/wiki/User:Mitchipr
+%step
+<table>
+<tr>
+<td>
+!={height:20px}Licence_Art_Libre.png!
+</td><td>
+
+p{font-size:12px; line-height: 15px;}. This license logo is either public
+domain or (c) Aurelio A. Heckert <aurium@gmail.com> but is (r) FSF; to
+watch people at their finest see:
+http://commons.wikimedia.org/wiki/File:Heckert_GNU_white.svg
+http://commons.wikimedia.org/wiki/File:License_icon-fdl.svg</small>
+</td>
+</tr> </table>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. The kludge objection
+
+!<kludge.jpg!
+
+<div style='margin-left:500px'>
+
+<i>tl;dr: Our brains suck.</i>
+%step_list
+* Our memories are faulty
+~* We're irrational
+~<i>Why would anyone want to steal design ideas from the brain?</i>
+%end
+</div>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+%begin
+!ispy2.jpg!
+
+PD http://www.rookiemoms.com/author/whitney/
+%end
+!={width:80%}spy041.jpg!
+
+http://www.theotherpages.org/spy/spy041.jpg
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!{width:100%}English_Walnuts.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1=. Progress in the computer industry is driven by
+
+h2=. feature size
+
+<table><tr><td>
+!={height:300px}transistor.jpg!
+</td><td>
+!={height:300px}1963_2_1.jpg!
+</td><td>
+!={height:300px}1974_8080.jpg!
+</td><td>
+!={height:300px}L_Intel-A80486SX-33.jpg!
+</td><td>
+<h2>...</h2>
+</td></tr></table>
+
+h2. We can now fit ~10,000 transistors in the space occupied by one in 1970.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1>. Progress in the computer industry is driven by
+
+!<{height:500px}MicroprocessorClockSpeed.jpg!
+
+h2>. <strike>feature size</strike>
+
+h2>. speed
+
+p=. http://www.singularity.com
+
+%step
+Data from 1976–1999: E. R. Berndt, E. R. Dulberger, and N. J. Rappaport, “Price and Quality of Desktop and Mobile Personal Computers: A Quarter Century of History,” July 17, 2000, http://www.nber.org/~confer/2000/si2000/berndt.pdf.
+
+Data from 2001–2016: ITRS, 2002 Update, On-Chip Local Clock in Table 4c: Performance and Package Chips: Frequency On-Chip Wiring Levels—Near-Term Years, p. 167.
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1>. Progress in the computer industry is driven by
+%left
+<table><tr>
+<td>!<clock_speed3.png!</td>
+<td>!<mips2.png!</td>
+</tr></table>
+%end
+
+%right
+h2>. <strike>feature size</strike>
+
+h2>. <strike>speed</strike>
+
+h2>. throughput
+%end
+http://csgillespie.wordpress.com/2011/01/25/cpu-and-gpu-trends-over-time/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1>. Progress in the computer industry is driven by
+
+%begin
+!<{height:300px}burnt-cpu.jpg!
+%end
+
+!<power_density.gif!
+
+h2>. <strike>feature size</strike>
+<br><strike>speed</strike>
+<br><strike>throughput</strike>
+<br>power/heat disipation
+
+bq=. ...the cooling bill alone at Lawrence Livermore National
+Laboratory (LLNL) is $6M/year and given that for every watt (W) of
+power consumed by an HPC system at LLNL, 0.7 W of cooling is needed to
+dissipate the power; the annual cost to both power and cool HPC
+systems at LLNL amounts to a total of $14.6M per year...
+
+p>. <i>-- Wu-chun Feng, Los Alamos National Laboratory</i>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!<lightning.jpg!
+
+<div style='margin-left:650px'>
+h2. What is wrong with this picture:
+
+%step_list
+* A low-power CPU (Atom): <b>~10 Watts</b> (excluding memory, I/O, etc.)
+~* A modern server CPU: <b>~100 Watts</b> (excluding memory, I/O, etc.)
+~* A server: <b>~400 Watts</b>
+~* A Monte Carlo cluster: <b>~40,000 Watts</b>
+~* A human brain: <b>~10 Watts</b>
+%end
+</div>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+
+p{height:120px;}. 
+
+h2=. Act VII
+
+<div style='margin-left:180px; margin-right:180px;'>
+Yes, 7.  What I called <i>Act I</i> was actually <i>Act IV: A New Doh!</i>,
+the two acts following it are similarly offset and the stuff right before it with the cheering and the crayons
+is really a christmas special that, many years from now, inebreated smart people will dare each other to watch.
+</div>
+</div>
+
+Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+h2. Commonplace assertion: "AI programs can beat humans at chess, and are close to beating them at go."
+
+%step
+h2. My claim: "Good humans can still beat the best AIs, but golf ball bombs can "beat" them both."
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. So what's going on here?
+
+h3. Why does it even seem to work, in the narrow sense of beating humans?
+   
+The fact that people can learn to play go at all means that there are
+Likely basic modules being engaged (map making, yours vs. mine, escape
+vs. capture, estimating completion times, etc.)  These would be REALLY
+GOOD TO LEARN ABOUT.
+
+There must be some structure that we aren't seeing.  One way to find
+the structure: do the Monte Carlo search, or even an exhaustive search
+on smaller cases, and then do it again with a small change to the
+original state.  Build up sets of cases in this way where making a
+small change changes the answer (or perhaps cases where it doesn't)
+and then look for patterns in them.  Does shifting everything change
+the answer?  Shifting by an even number of positions?  Rotating 90
+degrees?  Making changes inside settled territory?  But we're getting
+ahead of ourselves.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+!={height:650px}Silicon-unit-cell-3D-balls.png!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!={height:650px}turing-machine.png!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!={height:650px}cover_off.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!={height:650px}pc-block.6.2.gif!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+!={height:600px}Smi32neuron.jpg!
+
+!cc-by.png!
+(c) UC Regents Davis
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+!={height:600px}freudsmind.gif!
+
+!cc-by-sa.png!
+(c) 2012 Tangient LLC
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 0. Radiator
+
+<blockquote style='background:white; margin:80px; padding:40px;'>
+  For the brain, or in creatures without a brain that which
+  corresponds to it, is of all parts of the body the
+  coolest. Therefore, as moisture turned into vapour by the sun’s heat
+  is, when it has ascended to the upper regions, cooled by the
+  coldness of the latter, and becoming condensed, is carried
+  downwards, and turned into water once more; just so the
+  excrementitious evaporation, when carried up by the heat to the
+  region of the brain, is condensed into a ’phlegm’ (which explains
+  why catarrhs are seen to proceed from the head); while that
+  evaporation which is nutrient and not unwholesome, becoming
+  condensed, descends and cools the hot. The tenuity or narrowness of
+  the veins about the brain itself contributes to its being kept cool,
+  and to its not readily admitting the evaporation. This, then, is a
+  sufficient explanation of the cooling which takes place, despite the
+  fact that the evaporation is exceedingly hot.
+</blockquote>
+
+p(right). Aristotle, On Sleep and Sleeplessness, Part Three, trans. J. I. Beare.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 1. Homunculi
+
+h3. Isn't even an explanation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 2. Behaviorism, stimuli & response.
+
+h3. Does.  Not.  Work.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 3. Generalized learning machine / sponge (analogous to an ideal computer).
+
+h3. Doesn't fit the facts.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 4. Complex heterogeneous modular architecture (analogous to a real computer).
+
+h3. Uh, did you say "complex"?  Couldn't we try something easy first?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 5. Penrose quantum magic
+
+%step_list
+~* All formal systems are either incapable of proving 
+some truths or mistakenly accept some false propositions
+as true (Godel).
+~* Computers are formal systems, and thus have the same
+limitation (Turing).
+~* I, Roger Penrose, am a mathematician and do not; given
+sufficient time & paper I can comprehend the truth of any
+true proposition and am never wrong (Penrose).
+~* Therefore, I am not a computer (Penrose)
+~* By Occam, you probably aren't either (Penrose)
+~* Quantum systems do some funky stuff that defies logic if
+you look at the small scale (Schrodinger)
+~* Micro-tubules are really small (De Robertis and Franchi)
+~* Ergo, quantum effects in the micro-tubules give us the power
+to transcend Godel's limitation (Penrose)
+
+~
+It is worth noting that Stephen Wolfram has produced a similar
+theory, but with s/Roge Penrose/Stephen Wolfram/ and a few minor
+consequential adjustments.
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. 6. Massively parallel Monte Carlo system, "machine learning", etc.
+
+%step
+!golf-ball-cube-3.png!
+
+We're back to "isn't even an explanation".
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+   Why they abandoned "AI" for "ADD" (automated digital drudgery) --
+   structural decomposition to the "there's a Tarring machine in my
+   laptop" level didn't get them as far as they thought it would.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+ So what does right look like?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+bq. "XML is like violence; if it doesn't solve your problem you aren't using enough of it."
+
+   Let's go back to our best model, the one that says the brain is a
+   general purpose learning device, notionally equivalent to a computer
+   with good AI software running on it.  We know that there's some
+   special hardware (vision module) but we're assuming that the rest
+   is a general purpose learning/reasoning system.
+
+   This doesn't work.
+
+   LAD, and the need for predefined categories (the unlearnabilty of
+   uncategorized stimuli).
+
+bq. "Functional analysis is like math; if it doesn't solve your problem you aren't using enough of it."
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. So what other modules might there be?
+
+* a face recognition module
+* a spatial relations module
+* a rigid objects mechanics module
+* a tool-use module
+* a fear module
+* a social-exchange module
+* an emotion-perception module
+* a kin oriented motivation module
+* an effort allocation and recalibration module
+* a child care module
+* a social inference module
+* a friendship module
+* a semantic-inference module
+* a grammar acquisition module
+* a communication-pragmatics module
+* a theory of mind module
+* ...and so on!
+
+-- Mithen 1996
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Clues from the physical side
+
+%left
+!brain_areas.jpg!
+© 2008 Brain Injury Association of Peel and Halton
+%end
+
+%right
+!brain_connections.jpg!
+© 2010 by the National Academy of Sciences
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+   Can we probe for the existence of such modules?
+
+     * Wason selection task
+     
+       You are shown a set of four cards placed on a table, each of
+       which has a number on one side and a solid color on the
+       other.  The visible faces of the cards show 3, 8, red and
+       brown.  Which card(s) must you turn over in order to test the
+       truth of the proposition that cards with an even number on one
+       face have are red on the other side?
+
+
+       You are a chaperon at a student social and see four students.
+       Two are holding glasses and you know that one of them is 19,
+       and the other is 25; the third student has a can of beer and
+       the fourth a can of coke.  Which student(s) do you need to
+       check to enforce the rule that no one under 25 may drink
+       alcohol?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+What is the smallest integer I such that
+
+h3(center).  <i>3*sin(I)+1.5^I > 0 > 4*cos(I)-I</i>
+
+h3(center). for all x = I + R, R >= 0, we have
+
+h3(center).  <i>3*sin(x)+1.5^x > 4*cos(x)-x</i>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. What's the left-most berry that you can get at?
+
+!={height:80%}seed.png!
+
+(Produced with sage)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+What we got from chess & related games
+
+*    minmax, alpha/beta, planning w. good heuristics
+*    tree pruning
+*    frame problem(s) generalization & clarity (but not a good solution)
+**        What is frame problem
+**        Three problems: 1st order logic, general planning (), perception/learning (cf. perception is cognition)
+**        Tie back to LAD & to list of bird features vs. flight & how many true statements about birds we didn't consider
+*    Blackboard model / GA for experts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+
+Why these fail for go
+
+*    No good evaluation function
+**        Renormalization needed?
+***            Not insoluble, e.g. physics &
+**        gestalt & Non-monotonic 
+**        Based on what isn't there (star defined by blobs)
+*    Long term consequences / frame problem writ large
+*    Highly branching, bushy tree
+
+    Interestingly, these are all aspects of important real world
+    problems as well.  (The real world cases have the additional
+    complication that we can't do the detailed, full world simulations
+    that the Monte Carlo solutions rely on, so we really do need a
+    solution).
+    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE
+
+Avenues to explore
+
+* Giveaway go
+* Small boards, generalize up
+** Conventional wisdom: "It doesn't generalize (esp even/odd)"
+** Clearly not true -- humans do it, don't see as different games
+* Predict interesting areas (eye tracking)
+** Model w. finite state machine
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Procedural Learning with GAs (digression)
+
+*      The necessary properties of a genotype -> phenotype mapping; why
+      there are no wheeled creatures
+
+*      Asking these sorts of questions can teach you a lot about internal
+      coding.
+
+*      Example: hamming distance between ASCII codes vs. phonemes (b/v,
+      s/z, d/j, etc.)
+
+*      Math-function space.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+
+p{height:190px;}. 
+
+h2=. Stop, stop gallimaufry!
+
+h4=. <i>Thanks for coming, & I hope you enjoyed the show</i>
+
+</div>
+
+Card template (c) Farrin N. Abbott of CopyCatFilms; used by permission
+
+
+__END__
+
+NEXT YEAR
+
+  - "...but the thingamabob that does the job..."
+  - java hello world (lots of padding)
+  - C hello world (wc of main & all headers)
+  - ruby hello world (don't see a lot of salama-goo here)
+  - look at runtimes though -- padding stripped from syntax, but shows up in runtime
+  - 
+  -    (bridge content here)
+  -
+  - most "AI" software is >99.9% salamago, because we want to understand it.
+  - the situation is reversed doing things we understand well enough to build hardware
+    for (almost universally, these are things we don't have mental modules for, and
+    thus had to solve).  Adding integers, for example is far more efficient with a
+    computer (which has math hardware) instead of in your head (where you have to
+    work through the algorithm "by hand")
+  - The phrase is revieling.  You do it using your internal hand-eye action simulator,
+    as if you were doing it on paper.  To see this, first add
+
+         137
+       + 282
+      ------   
+         
+    Then:
+
+         CXXXVII
+      + CCLXXXII
+    ------------
+
+    It feels like a very different problem, because in the roman numeral case you're grouping objects:
+
+
+         C     XXX  V  II
+      + CC  L  XXX     II
+     -------------------
+       CCC L XXXXXX V IIII
+       CCC LL     X V IIII
+       CCCC X V IIII
+       CCCC X IX
+
+  - Neither of these is much like what goes on when a CPU adds two numbers.  Because we understand it, we can build efficient hardware to do it.
+
+
+
+
+
+LocalWords:  td px png ChemTool colour jpeg Pratibha Varshney jpg bq
+LocalWords:  Anghiari Silverstien HPMOR vold monistary vcenter pe nc
+LocalWords:  elif coloured favours playouts playout playout's Penrose
+LocalWords:  blockquote css FFE markus vE gcide li mau galimafr wn sa
+LocalWords:  WordNet omnium gatherum tnt cis afterwards fungshui xkcd
+LocalWords:  kallerna Brainfuck turing excrementitious catarrhs Wason
+LocalWords:  Homunculi Robertis Franchi unlearnabilty Mithen Halton
+LocalWords:  ornithopter fletching earthenexposure pc brainradiator
+LocalWords:  Ornothopters Prandtl Torkel Weis Fogh counterrotating nd
+LocalWords:  vortices Borgas Iguazu gfdl Licence Libre Heckert FSF wc
+LocalWords:  minmax GAs salama runtimes runtime salamago revieling
+LocalWords:  CXXXVII CCLXXXII CCC XXXXXX IIII CCCC
