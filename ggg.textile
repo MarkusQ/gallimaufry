@@ -125,7 +125,7 @@ h2. Then let's dive in.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE!
 
-<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
+<div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png); color: white; height: 480px; width: 837px;">
 
 p{height:190px;}. 
 
@@ -161,7 +161,7 @@ h1. 1. Peace on Earth, doing it wrong
 
 %right
 %step_list
-~* People set out to do something
+* People set out to do something
 ~* They see a way to accomplish it
 ~* They face obsticles and work to overcome them
 ~* All their focus gets tied up in the means  
@@ -288,10 +288,10 @@ You meet a person who can do it in their head...
 given 1 to n sum = n(n+1)/2
 
 the answer is 3*(1 to 333 sum) + 5*(1 to 199 sum) - 15*(1 to 66 sum)
-~      or 3*333*334/2 + 5*199*200/2 - 15*66*67/2
-~      or (999*334 + 199000 - 66*1005)/2
-~      or (333666 + 199000 - 66330) /2
-~      or 466336/2 = 233168
+~or 3*333*334/2 + 5*199*200/2 - 15*66*67/2
+~or (999*334 + 199000 - 66*1005)/2
+~or (333666 + 199000 - 66330) /2
+~or 466336/2 = 233168
 %end
 
 h1. Algorithm 5
@@ -321,6 +321,29 @@ h1. So where does that leave us?
 
 !=(center)cat-melon.jpg!
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+<center style='font-size: 180px;'>15</center>
+<center>
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+</center>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. The rules of Go
 
@@ -587,36 +610,38 @@ h3. ...but it gets worse.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE!
-<div style="background: url(Hubble_ultra_deep_field.jpg); color: white;">
 
 h2. The golf analogy is way too flattering.
 
 %step_list
 * Suppose there are 150 moves left.
-~* Ignoring captures, there are 150! playouts, or roughly 6e+262.
-~* Clearly, we aren't going to find the perfect game playout.
-~* So what are the odds that the playouts are going to hit upon
-anything close to what will happen if both players make one of
-their 10 best moves at each turn?
-~* That will reduce the number of possibilities by about 1e140, to 1e122, which looks much
-better.
-~* How much better?  Well, for comparison, there are on the order of 1e80 atoms in the observable universe.
-~* So suppose you look out in the night sky on a random direction (not
-      necessarily towards a star)
-~* and think of an integer number of nanoseconds between 0 and 13 billion years.
-~* Go out that far as the photon flies in that direction, and write your initials on
-the closest atom to that spot.
-~* Meanwhile, I'll pick an arbitrary atom by some other method, and look to see if it has your
-   initials on it.
+~* 150! &asymp; 5.7 &dot; 10<sup>262</sup>
+~* 150!/10<sup>140</sup> &asymp; 10<sup>122</sub>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+<div style="background: url(Hubble_ultra_deep_field.jpg); color: white; height: 100%; position:absolute; top: 0px; left:0px;"><div style='margin: 50px;'>
+
+h2. The golf analogy is way too flattering.
+
+%step_list
+* Suppose there are 150 moves left.
+
+* 150! &asymp; 5.7 &dot; 10<sup>262</sup>
+
+* 150!/10<sup>140</sup> &asymp; 10<sup>122</sub>
+
+* 10<sup>80</sup> H<sub>2</sub>
+~* 1.3 10<sup>10</sup> years x 365 days/year x 24 hours/day x 60 x 60 x 10<sup>9</sup> &asymp; 4 x 10<sup>26</sup>
 ~* Assuming atomic graffiti isn't a widespread but heretofore unrecognized (by humans) blight, my odds of
-finding your atom on the first shot are roughly 1e42 better than the Monte Carlo playout's odds of hitting a decent game.
+finding your atom on the first shot are roughly 10<sup>42</sup> better than the Monte Carlo playout's odds of hitting a decent game.
 
 ~
 h3(right). ...but it gets still worse.
 ~
 %end
-</div>
-
+</div></div>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. We're that stupid
 
@@ -779,24 +804,31 @@ h1. So are we committing "the ornithopter error"?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. So are we committing "the ornithopter error"?
 
-!<{height:500px}Iguazu_falls.jpg!
+!<{height:450px}Iguazu_falls.jpg!
 !<{height:40px}gfdl.png!
 (c) http://en.wikipedia.org/wiki/User:Mitchipr
 %step
-<table>
-<tr>
-<td>
+<table><tr><td>
 !={height:20px}Licence_Art_Libre.png!
 </td><td>
 
 p{font-size:12px; line-height: 15px;}. This license logo is either public
 domain or (c) Aurelio A. Heckert <aurium@gmail.com> but is (r) FSF; to
 watch people at their finest see:
-http://commons.wikimedia.org/wiki/File:Heckert_GNU_white.svg
-http://commons.wikimedia.org/wiki/File:License_icon-fdl.svg</small>
+
+p{font-size:12px; line-height: 15px;}. http://commons.wikimedia.org/wiki/File:Heckert_GNU_white.svg
+
+p{font-size:12px; line-height: 15px;}. http://commons.wikimedia.org/wiki/File:License_icon-fdl.svg</small>
 </td>
 </tr> </table>
 %end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+<center>
+!{height:80%}empty_tic_tac_toe.png!
+</center>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1. The kludge objection
@@ -836,6 +868,13 @@ http://www.theotherpages.org/spy/spy041.jpg
 !SLIDE
 
 !{width:100%}English_Walnuts.jpg!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+!Salmon_sashimi.jpg!
+
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h1=. Progress in the computer industry is driven by
@@ -931,6 +970,13 @@ h2. What is wrong with this picture:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE!
+!Salmon_sashimi.jpg!
+
+!cc-by.png!
+<small>http://en.wikipedia.org/wiki/User:Blu3d</small>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
 
 <div style="background: url(SilentMovieCard-NTSC-DVwidescreen.png) ; color: white; height: 480px; width: 837px;">
 
@@ -1009,7 +1055,7 @@ ahead of ourselves.
 (c) 2012 Tangient LLC
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 0. Radiator
+!SLIDE!
 
 <blockquote style='background:white; margin:80px; padding:40px;'>
   For the brain, or in creatures without a brain that which
@@ -1031,30 +1077,56 @@ h1. 0. Radiator
 
 p(right). Aristotle, On Sleep and Sleeplessness, Part Three, trans. J. I. Beare.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 1. Homunculi
+!SLIDE!
 
-h3. Isn't even an explanation.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 2. Behaviorism, stimuli & response.
-
-h3. Does.  Not.  Work.
+!(left)homunculusb.jpg!
+!(right)ToddsHeadPiece.jpg!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 3. Generalized learning machine / sponge (analogous to an ideal computer).
+!SLIDE!
+<table><tr><td>
+!(left)skinner/pigeons.jpg!
+!(left){width:420px}(left)skinner/pigeon.jpg!
+</td><td>
+!{height:320px}skinner/pigeonGM1.jpg!
+</td><td>
+!{height:120px}skinner/skinnerbox2.jpg!
+!{height:200px}skinner/air-crib.jpg!
+</tr></td></table><table><tr><td>
+!{height:320px}skinner/skinner_and_bird.png!
+</td><td>
+!{height:160px}(left)skinner/skinner_box.jpg!
+!{height:160px}(left)skinner/babytender.jpg!
+</td><td>
+!{height:320px}skinner/skinner_and_birds.jpg!
+</tr></td></table>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
 
-h3. Doesn't fit the facts.
+!drinking_bird2.png!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 4. Complex heterogeneous modular architecture (analogous to a real computer).
+!SLIDE!
 
-h3. Uh, did you say "complex"?  Couldn't we try something easy first?
+<center>
+!={height:600px}Brain_Sponge_by_mandykat.jpg!
+
+(c) http://mandykat.deviantart.com/
+</center>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 5. Penrose quantum magic
+!SLIDE!
 
+<table><tr><td>
+<table><tr><td>
+!{width:250px}(left)Penrose.jpeg!
+</td></tr><tr><td>
+!(left)pen5sm.jpg!
+</td></tr></table>
+
+</td><td>
 %step_list
-~* All formal systems are either incapable of proving 
+* All formal systems are either incapable of proving 
 some truths or mistakenly accept some false propositions
 as true (Godel).
 ~* Computers are formal systems, and thus have the same
@@ -1072,37 +1144,65 @@ to transcend Godel's limitation (Penrose)
 
 ~
 It is worth noting that Stephen Wolfram has produced a similar
-theory, but with s/Roge Penrose/Stephen Wolfram/ and a few minor
-consequential adjustments.
+theory, but with
+{{{
+s/Roger Penrose/Stephen Wolfram/
+}}}
+and a few minor consequential adjustments.
 %end
+</td></tr></table>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. 6. Massively parallel Monte Carlo system, "machine learning", etc.
+!SLIDE!
 
-%step
+<center>
 !golf-ball-cube-3.png!
+</center>
 
-We're back to "isn't even an explanation".
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+!SLIDE!
+
+%left
+!<(left){height:450px}discovery.png!
+%end
+%right
+!>(right){height:430px}babbage1.gif!
 %end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-!SLIDE
+!SLIDE!
 
-   Why they abandoned "AI" for "ADD" (automated digital drudgery) --
-   structural decomposition to the "there's a Tarring machine in my
-   laptop" level didn't get them as far as they thought it would.
-
+<table><tr><td>
+!{height:450px}homunculusgood-idaho-ptv.jpg!
+</td><td>
+!{height:450px}right-brain-and-left-brain.jpg!
+</td><td>
+!{height:450px}society.jpg!
+</td></tr><tr><td>
+(c) Idaho Public Television
+</td><td>
+</td><td>
+</td></tr></table>
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-!SLIDE
+!SLIDE!
 
- So what does right look like?
+%left
+!brain_areas.jpg!
+© 2008 Brain Injury Association of Peel and Halton
+%end
+
+%right
+!brain_connections.jpg!
+© 2010 by the National Academy of Sciences
+%end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
 
 bq. "XML is like violence; if it doesn't solve your problem you aren't using enough of it."
 
+%begin
    Let's go back to our best model, the one that says the brain is a
    general purpose learning device, notionally equivalent to a computer
    with good AI software running on it.  We know that there's some
@@ -1113,11 +1213,38 @@ bq. "XML is like violence; if it doesn't solve your problem you aren't using eno
 
    LAD, and the need for predefined categories (the unlearnabilty of
    uncategorized stimuli).
+%end
 
+%step
+<table><tr><td>
+!{height:200px}talking.jpg!
+</td><td>
+p{font-size:12px; line-height: 20px;}. As natural selection acts only by the accumulation of slight modifications of structure or instinct, each profitable to the individual under its conditions of life, it may reasonably be asked, how a long and graduated succession of modified architectural instincts, all tending towards the present perfect plan of construction, could have profited the progenitors of the hive-bee?
+</td><td>
+!{height:200px}Salmon_sashimi.jpg!
+</td><td>
+!{height:200px}balance.jpg!
+</td><td>
+!{height:200px}ballance2.jpg!
+</td></tr></table><table><tr><td>
+!{height:200px}woman_drinking_water.jpg!
+</td><td>
+!{height:200px}collaboration.jpg!
+</td><td>
+!{height:200px}expressions.jpg!
+</td><td>
+!{height:200px}mechanical_puzzel.jpg!
+</td><td>
+!{height:200px}play_go.jpg!
+</td></tr></table>
+%end
+
+%step
 bq. "Functional analysis is like math; if it doesn't solve your problem you aren't using enough of it."
+%end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. So what other modules might there be?
+h1. So what modules might there be?
 
 * a face recognition module
 * a spatial relations module
@@ -1140,39 +1267,101 @@ h1. So what other modules might there be?
 -- Mithen 1996
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-h1. Clues from the physical side
-
-%left
-!brain_areas.jpg!
-© 2008 Brain Injury Association of Peel and Halton
-%end
-
-%right
-!brain_connections.jpg!
-© 2010 by the National Academy of Sciences
-%end
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
 
-   Can we probe for the existence of such modules?
+Can we probe for the existence of such modules?
 
-     * Wason selection task
+* Wason selection task
      
-       You are shown a set of four cards placed on a table, each of
-       which has a number on one side and a solid color on the
-       other.  The visible faces of the cards show 3, 8, red and
-       brown.  Which card(s) must you turn over in order to test the
-       truth of the proposition that cards with an even number on one
-       face have are red on the other side?
+You are shown a set of four cards placed on a table, each of
+which has a number on one side and a solid color on the
+other.  The visible faces of the cards show 3, 8, red and
+brown.  Which card(s) must you turn over in order to test the
+truth of the proposition that cards with an even number on one
+face have are red on the other side?
 
 
-       You are a chaperon at a student social and see four students.
-       Two are holding glasses and you know that one of them is 19,
-       and the other is 25; the third student has a can of beer and
-       the fourth a can of coke.  Which student(s) do you need to
-       check to enforce the rule that no one under 25 may drink
-       alcohol?
+You are a chaperon at a student social and see four students.
+Two are holding glasses and you know that one of them is 19,
+and the other is 25; the third student has a can of beer and
+the fourth a can of coke.  Which student(s) do you need to
+check to enforce the rule that no one under 25 may drink
+alcohol?
+
+
+{{{
+
+
+
+
+
+
+
+
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+ big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese
+0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+epistemology - epistemology - epistemology - epistemology - epistemology - epistemology - 
+you  they  me  you  they  me you   they  me  you  they  me  you  they  me  you  they  me 
+ign chance  design chance  design chance  design chance  design chance  design chance  design 
+logic reasons  logic reasons logic  reasons logic  reasons logic  reasond logic  reasons
+0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE0123456789ABCDE
+pit at wasting pit at wasting pit a wasting spit a wasting spit a wasting spit a wasting
+pit at wasting pit at wasting pit a wasting spit a wasting spit a wasting spit a wasting
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+ big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+ood bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+od bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+ big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+ good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+ig fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+y good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly good bad, ugly  
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese big fat cheese 
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+they stop tart they stop tart the stop start the stop start the stop start the stop start
+}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
@@ -1195,7 +1384,45 @@ h1. What's the left-most berry that you can get at?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Add to 15, reprise
+
+%left
+!magic_square.png!
+%end
+
+%right
+%step
+<table style="border-spacing: 25px; background: url(empty_tic_tac_toe.png); height: 310px; width: 310px;">
+<tr><td>( 0, 0)</td><td>( 1, 0)</td><td>( 2, 0)</td></tr>
+<tr><td>( 0, 1)</td><td>( 1, 1)</td><td>( 2, 1)</td></tr>
+<tr><td>( 0, 2)</td><td>( 1, 2)</td><td>( 2, 2)</td></tr>
+</table>
+
+(A<sub>x</sub>-B<sub>x</sub>) (B<sub>y</sub>-C<sub>y</sub>) = (A<sub>y</sub>-B<sub>y</sub>) (B<sub>x</sub>-C<sub>x</sub>)
+%end
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+h1. Digression Concerning the Two Small Games
+
+%step_list
+<center><table>
+<tr><td width=250em><h2>Tic-tac-toe</h2></td><td width=250em><h2>Add to 15</h2></td></tr>
+<tr class='step'><td>Harder to code       </td><td>Harder for humans     </td></tr>
+<tr class='step'><td>Easier for humans    </td><td>Easier to code        </td></tr>
+<tr class='step'><td colspan=2> - - - identical complexity - - - </td></tr>
+<tr class='step'><td>2d                    </td><td>1d                  </td></tr>
+<tr class='step'><td>Adversarial           </td><td>Adversarial         </td></tr>
+<tr class='step'><td>Few choices           </td><td>Few choices      </td></tr>
+<tr class='step'><td>Full information      </td><td>Full information    </td></tr>
+<tr class='step'><td>...?                  </td><td>...?                </td></tr>
+</table></center>
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 !SLIDE
+
+
 
 What we got from chess & related games
 
